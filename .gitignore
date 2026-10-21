@@ -1,0 +1,18 @@
+# Foundry
+out/
+cache/
+broadcast/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Build artifacts
+*.bak
+*.tmp
