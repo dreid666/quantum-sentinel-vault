@@ -1,0 +1,39 @@
+name: Security
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run edge sentinel
+        run: python3 agent_core/edge_sentinel.py src/Vault.sol
+
+      - name: Invariant tests
+        run: forge test --match-contract VaultInvariantTest --invariant-runs 10000 --gas-report
+
+      - name: Ensure no lingering backup file
+        run: |
+          if [ -f src/Vault.sol.bak ]; then
+            echo "Lingering src/Vault.sol.bak found" >&2
+            exit 1
+          fi

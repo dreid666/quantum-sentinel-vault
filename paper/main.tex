@@ -1,0 +1,37 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{amsmath,amssymb}
+\usepackage{cite}
+
+\begin{document}
+
+\title{Quantum-Classical Architectures for Ethereum Mempool Forecasting}
+\author{\IEEEauthorblockN{Quantum Sentinel Vault Team}}
+\maketitle
+
+\begin{abstract}
+We present a hybrid architecture in which a four-qubit variational quantum circuit
+encodes mempool features and feeds a classical classification head to forecast
+transaction congestion and adversarial ordering behaviour.
+\end{abstract}
+
+\begin{IEEEkeywords}
+variational quantum circuits, mempool, Ethereum, hybrid learning
+\end{IEEEkeywords}
+
+\section{Introduction}
+Public mempools expose pending transactions to ordering attacks~\cite{daian2020flash}.
+Variational quantum algorithms~\cite{cerezo2021variational} offer compact models that
+can be trained end-to-end with classical networks~\cite{bergholm2018pennylane}.
+
+\section{Architecture}
+Classical features $x$ are projected to angles $\theta=\pi\tanh(Wx)$ and embedded by
+rotations. Parameterized layers with CNOT entanglement produce expectations
+$\langle Z_i\rangle$, which a linear head maps to class logits.
+
+\section{Conclusion}
+The hybrid design is a lightweight baseline for quantum-classical mempool forecasting.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
