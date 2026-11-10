@@ -75,7 +75,13 @@ def atomic_write(path: Path, content: str) -> None:
 
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("file", type=Path, help="Solidity file to analyse")
+    parser.add_argument(
+        "file",
+        nargs="?",
+        type=Path,
+        default=Path("src/Vault.sol"),
+        help="Solidity file to analyse (default: src/Vault.sol)",
+    )
     parser.add_argument("--check-only", action="store_true", help="report without patching")
     args = parser.parse_args(argv)
 
