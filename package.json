@@ -4,7 +4,12 @@
   "private": true,
   "main": "api/server.js",
   "scripts": {
-    "start": "node api/server.js"
+    "start": "node api/server.js",
+    "sentinel": "python3 agent_core/edge_sentinel.py",
+    "slither": "python3 agent_core/edge_sentinel.py src/Vault.sol",
+    "docker:build": "docker compose build",
+    "docker:api": "docker compose up -d api",
+    "docker:sentinel": "docker compose run --rm sentinel"
   },
   "engines": {
     "node": ">=18"

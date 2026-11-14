@@ -1,0 +1,12 @@
+node_modules/
+npm-debug.log*
+out/
+cache/
+broadcast/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.bak
+*.tmp
+.git/

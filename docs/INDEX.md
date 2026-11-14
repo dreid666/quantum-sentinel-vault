@@ -15,3 +15,11 @@ Install dependencies:
     forge install OpenZeppelin/openzeppelin-contracts foundry-rs/forge-std --no-commit
     pip install -r requirements.txt
     npm install
+
+## Docker
+
+Build and run the hardened API or full Sentinel + Foundry + Slither + Quantum suite:
+
+    docker compose up -d api
+    docker compose run --rm sentinel
+

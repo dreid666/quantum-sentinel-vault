@@ -1,0 +1,31 @@
+services:
+  api:
+    build:
+      context: .
+      target: api
+    container_name: quantum-sentinel-api
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:3000}
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+
+  sentinel:
+    build:
+      context: .
+      target: sentinel
+    container_name: quantum-sentinel-core
+    volumes:
+      - ./src:/workspace/src
+      - ./test:/workspace/test
+      - ./agent_core:/workspace/agent_core
+      - ./quantum:/workspace/quantum
+    command: >
+      sh -c "python3 agent_core/edge_sentinel.py src/Vault.sol &&
+             forge test --match-contract VaultInvariantTest &&
+             python3 quantum/iq_transformer.py"

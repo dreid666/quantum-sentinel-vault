@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "edge-sentinel"
+version = "0.1.0"
+description = "Edge Sentinel CEI violation detector/patcher and Quantum Sentinel Vault toolkit"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+dependencies = [
+    "torch",
+    "pennylane",
+    "numpy",
+    "scipy",
+    "slither-analyzer",
+    "solc-select",
+]
+
+[project.scripts]
+edge-sentinel = "agent_core.edge_sentinel:main"
+edge_sentinel = "agent_core.edge_sentinel:main"
+"edge_sentinel.py" = "agent_core.edge_sentinel:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agent_core*", "quantum*"]

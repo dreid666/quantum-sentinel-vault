@@ -12,6 +12,7 @@ contract VaultHandler is CommonBase, StdCheats, StdUtils {
 
     uint256 public ghost_totalDeposited;
     uint256 public ghost_totalWithdrawn;
+    uint256 public ghost_totalMinted;
     mapping(address => uint256) public ghost_userBalances;
 
     constructor(Vault _vault) {
@@ -50,5 +51,15 @@ contract VaultHandler is CommonBase, StdCheats, StdUtils {
 
         ghost_totalWithdrawn += amount;
         ghost_userBalances[actor] -= amount;
+    }
+
+    function mintHash(uint256 actorSeed, bytes32 payloadHash) external {
+        if (payloadHash == bytes32(0) || vault.payloadMinter(payloadHash) != address(0)) {
+            return;
+        }
+        address actor = actors[actorSeed % actors.length];
+        vm.prank(actor);
+        vault.mintHash(payloadHash);
+        ghost_totalMinted += 1;
     }
 }

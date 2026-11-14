@@ -1,21 +1,41 @@
-MIT License
+PROPRIETARY SOFTWARE LICENSE — ALL RIGHTS RESERVED
 
-Copyright (c) 2026 Daniel Reid
+Copyright (c) 2026 Daniel Reid (dreid666 / Clearanc3turbo). All Rights Reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+NOTICE: This software, including its source code, smart contracts (`Vault.sol`),
+Edge Sentinel Checks-Effects-Interactions (CEI) static detector and atomic
+auto-patcher (`agent_core/edge_sentinel.py`), `ScientificVaultOrchestrator`,
+`IQMempoolTransformer`, Pay-to-Hash (P2H) cryptographic commitment schemes,
+Foundry invariant suites, and associated documentation (collectively, the
+"Software"), is the confidential and proprietary intellectual property of
+Daniel Reid ("Copyright Holder").
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. NO GRANT OF LICENSE
+   Nothing in this repository or distribution grants any person or entity any
+   right, title, or license—whether express, implied, by estoppel, or otherwise—
+   under any copyright, patent, trade secret, trademark, or other intellectual
+   property right of the Copyright Holder.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. STRICT PROHIBITIONS
+   Without the prior, explicit, and physically or cryptographically signed written
+   authorization of the Copyright Holder, you may NOT:
+   (a) copy, reproduce, distribute, publish, deploy, or transmit the Software, in
+       whole or in part, in any form or on any blockchain network;
+   (b) modify, adapt, translate, or create derivative works based upon the
+       Software;
+   (c) reverse engineer, decompile, disassemble, or attempt to derive the
+       underlying trade secrets, autonomous repair heuristics, or cryptographic
+       invariants of the Software;
+   (d) use the Software, or any component thereof, for any commercial,
+       production, institutional, or competitive purpose, or to train, fine-tune,
+       distill, or evaluate any machine learning or artificial intelligence system;
+   (e) remove, alter, obscure, or bypass any copyright notice, proprietary legend,
+       or license verification check embedded within the Software.
+
+3. DISCLAIMER OF WARRANTY & LIMITATION OF LIABILITY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER
+   IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN
+   CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
